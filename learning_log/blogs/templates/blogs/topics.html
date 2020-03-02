@@ -1,0 +1,21 @@
+{%extends "blogs/base.html"%}
+
+{%block content%}
+<h1>我的学习内容：</h1>
+
+
+<ul>
+    {%for topic in topics%}
+    <li>
+        <a href="{% url 'blogs:topic' topic_id=topic.id %}">{{topic}}</a>
+    </li>
+    <ol>
+        {% for entry in topic.entry_set.all %}
+        <li>{{entry}}</li>
+        {%empty%}
+        <li>现在没有内容</li>
+        {%endfor%}
+    </ol>
+    {%endfor%}
+</ul>
+{%endblock content%}
