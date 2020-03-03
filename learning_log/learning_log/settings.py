@@ -25,7 +25,7 @@ SECRET_KEY = 'fzcj!i3w3-ifb8&7@fp8z!zye@v)0_x)_et)p-c)(ru7yk#pmf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['106.53.116.152']
+ALLOWED_HOSTS = ['106.53.116.152','www.siaiblog.xyz']
 
 STATIC_ROOT = os.path.join(BASE_DIR,'collected_static')
 # Application definition
