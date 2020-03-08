@@ -15,6 +15,12 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+STATIC_URL = '/static/'  # 接口前缀 跟你的静态文件夹的名字一点关系都没有
+# 默认情况下这个前缀跟静态文件夹名字一样！！！
+# 静态文件配置
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'static'),  # 就是你的静态文件夹路径
+]
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -23,9 +29,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'fzcj!i3w3-ifb8&7@fp8z!zye@v)0_x)_et)p-c)(ru7yk#pmf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG =True
 
-ALLOWED_HOSTS = ['106.53.116.152','www.siaiblog.xyz']
+
 
 STATIC_ROOT = os.path.join(BASE_DIR,'collected_static')
 # Application definition
