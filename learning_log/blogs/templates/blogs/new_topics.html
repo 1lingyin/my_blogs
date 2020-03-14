@@ -1,7 +1,0 @@
-<p>添加新标题</p>
-
-<form action="{% url 'blogs:new_topics' %}" method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button name="submit">添加</button>
-</form>
