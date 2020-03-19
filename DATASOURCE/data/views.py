@@ -25,10 +25,20 @@ def add(request):
             sql1= "SELECT cities,level1,level2,level3,date from DATA WHERE cities='"+str(city)+"'"+"AND"+" date='"+str(date)+"'"
             db.execute(sql1)
             data_exist=db.fetchone()
-            data_now=data_exist[int(level)]+1
-            sql2="UPDATE DATA SET level"+str(level)+"=%s WHERE cities=%s AND date=%s"
-            db.execute(sql2,[data_now,city,date])
-            connect.commit()
+            if data_exist:
+                data_now=data_exist[int(level)]+1
+                sql2="UPDATE DATA SET level"+str(level)+"=%s WHERE cities=%s AND date=%s"
+                db.execute(sql2,[data_now,city,date])
+                connect.commit()
+            elif not data_exist:
+                sql2 = "INSERT INTO DATA(cities,level1,level2,level3,date) VALUES (%s,%s,%s,%s,%s)"
+                if int(level)==1:
+                    db.execute(sql2, [city,1,0,0, date])
+                elif int(level) ==2:
+                    db.execute(sql2, [city, 0, 1, 0, date])
+                elif int(level) ==3:
+                    db.execute(sql2, [city, 0, 0, 1, date])
+                connect.commit()
             data.save()
             return HttpResponseRedirect('/add/')
     else:
