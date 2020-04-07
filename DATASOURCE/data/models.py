@@ -6,3 +6,7 @@ class datacollect(models.Model):
     cities=models.CharField(max_length=20)
     level=models.CharField(max_length=20)
     date_added=models.DateTimeField(auto_now_add=True)
+class advice(models.Model):
+    date=models.CharField(max_length=20)
+    advice=models.TextField()
+    date_added = models.DateTimeField(auto_now_add=True)
