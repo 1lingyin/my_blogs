@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+目前只开放重庆地区
+<form action="{% url 'data:add_data' %}" method='POST'>
+	{% csrf_token %}
+     地区
+    <select name="city">
+        <option value="重庆">重庆</option>
+    </select>
+    区县
+    <select name="province">
+        <option value="">请选择区县</option>
+        <option value="巴南区">巴南区</option>
+        <option value="璧山区">璧山区</option>
+        <option value="长寿区">长寿区</option>
+        <option value="城口">城口</option>
+        <option value="重庆">重庆</option>
+        <option value="大足">大足</option>
+        <option value="垫江">垫江</option>
+        <option value="丰都">丰都</option>
+        <option value="奉节">奉节</option>
+        <option value="涪陵">涪陵</option>
+        <option value="合川">合川</option>
+        <option value="江北">江北</option>
+        <option value="江津">江津</option>
+        <option value="开县">开县</option>
+        <option value="梁平">梁平</option>
+        <option value="南川">南川</option>
+        <option value="彭水">彭水</option>
+        <option value="黔江">黔江</option>
+        <option value="綦江">綦江</option>
+        <option value="荣川">荣川</option>
+        <option value="石柱">石柱</option>
+        <option value="铜梁">铜梁</option>
+        <option value="潼南">潼南</option>
+        <option value="万州">万州</option>
+        <option value="武隆">武隆</option>
+        <option value="巫山">巫山</option>
+        <option value="巫溪">巫溪</option>
+        <option value="秀水">秀水</option>
+        <option value="永川">永川</option>
+        <option value="云阳">酉阳</option>
+        <option value="忠县">忠县</option>
+    </select>
+    传染疾病类别
+    <select name="level">
+        <option value="">请选择类别</option>
+        <option value="丙类">丙类</option>
+        <option value="乙类">乙类</option>
+        <option value="甲类">甲类</option>
+    </select>
+    疾病种类
+    <select name="disease">
+        <option value="">请选择类别</option>
+        <option value="">#####甲类#####</option>
+        <option value="鼠疫">鼠疫</option>
+        <option value="霍乱">霍乱</option>
+        <option value="">#####乙类#####</option>
+        <option value="新型冠状病毒肺炎">新型冠状病毒肺炎</option>
+        <option value="结核病">结核病</option>
+        <option value="登革热">登革热</option>
+        <option value="血吸虫病">血吸虫病</option>
+        <option value="艾滋病">艾滋病</option>
+        <option value="狂犬病">狂犬病</option>
+        <option value="人感染H7N9禽流感">人感染H7N9禽流感</option>
+        <option value="疟疾">疟疾</option>
+        <option value="麻疹">麻疹</option>
+        <option value="传染性非典型肺炎">传染性非典型肺炎</option>
+        <option value="">#####丙类#####</option>
+        <option value="感染性腹泻病">感染性腹泻病</option>
+        <option value="麻风病">麻风病</option>
+        <option value="黑热病">黑热病</option>
+        <option value="流行性腮腺炎">流行性腮腺炎</option>
+        <option value="包虫病">包虫病</option>
+    </select>
+    日期
+    <input type="date" name="time">
+    <button name="submit">添加记录</button>
+</form>
