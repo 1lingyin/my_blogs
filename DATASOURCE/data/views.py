@@ -268,9 +268,9 @@ def add_data(request):
                         charset='utf8'
                     )
                 db = connect.cursor()
-                sql2 = "INSERT INTO DATA_ALL(city,level,disease,time,number) VALUES (%s,%s,%s,%s,%s)"
+                sql2 = "INSERT INTO DATA_ALL(city,level,time,number) VALUES (%s,%s,%s,%s)"
                 try:
-                        db.execute(sql2, [city, level, disease, time, 1])
+                        db.execute(sql2, [city, level, time, 1])
                         connect.commit()
                 except:
                         # 有异常，回滚事务
